@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soufiane Mamoun — Kfz-Mechaniker Portfolio</title>
+  <meta name="description" content="Portfolio & Bewerbung — Soufiane Mamoun, Kfz-Mechaniker. Wartung, Diagnose, Reifenmontage." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #061029;
+      --surface: #0f1724;
+      --card: #0f1c28;
+      --muted: #b6c1c9;
+      --text: #f0f6fb;
+
+      /* primary blue */
+      --blue-500: #0072ff;
+      --blue-400: #1a8bff;
+      --blue-600: #0058d6;
+
+      /* accent yellow */
+      --yellow-500: #ffd166;
+      --yellow-400: #ffdb80;
+      --yellow-600: #e6b800;
+
+      --glass: rgba(255,255,255,0.03);
+      --shadow: 0 14px 40px rgba(2,6,23,0.6);
+    }
+
+    /* GELBE BUTTONS */
+.btn.yellow,
+#openVideoBtn,
+.btn-cv,
+.btn-contact {
+  background: #009bf5;
+  color: #000;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.btn.yellow:hover,
+#openVideoBtn:hover,
+.btn-cv:hover,
+.btn-contact:hover {
+  filter: brightness(1.1);
+}
+
+    #formFeedback {
+    margin-block-start: 8px;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+#formFeedback.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ #formFeedback.success { color: #042233; background-color: #ffd166; padding: 10px; border-radius: 8px; }
+  #formFeedback.error { color: #fff; background-color: #ff4d4f; padding: 10px; border-radius: 8px; }
+
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{block-size:100%}
+    
+    body{
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #031220 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    
+
+    .container{max-inline-size:1100px;margin:0 auto;padding:0 20px}
+    a{color:inherit;text-decoration:none}
+    img{max-inline-size:100%;display:block}
+
+    img {
+  max-inline-size: 100%;
+  block-size: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+    /* Header */
+    .header{position:fixed;inset-block-start:0;inset-inline-start:0;inset-inline-end:0;block-size:72px;display:flex;align-items:center;z-index:1200;
+      backdrop-filter:blur(8px);background:linear-gradient(180deg, rgba(6,16,41,0.6), rgba(6,16,41,0.35));
+      border-block-end:1px solid var(--glass);
+    }
+    /* Basis */
+  .header { position: fixed; inset-inline:0; inset-block-start:0; background: var(--bg); z-index:1000; padding:0 20px; }
+  .nav { display:flex; justify-content:space-between; align-items:center; block-size:72px; }
+  .logo { color: var(--yellow-500); font-weight:800; font-size:1.1rem; text-decoration:none; }
+  .nav-links { display:flex; gap:20px; list-style:none; }
+  .nav-links a { color: var(--blue-400); text-decoration:none; padding:8px 12px; border-radius:8px; transition:0.2s; }
+  .nav-links a:hover { background: var(--yellow-500); color: var(--bg); }
+
+  .hamburger { display:none; font-size:1.8rem; background:none; border:none; color: var(--yellow-500); cursor:pointer; }
+
+  /* Mobile Menu */
+  .mobile-menu { display:none; flex-direction:column; list-style:none; background: var(--bg); position:absolute; inset-inline-start:0; inset-block-start:72px; inline-size:100%; padding:10px 0; }
+  .mobile-menu a { display:block; padding:12px 20px; color: var(--text); text-decoration:none; }
+  .mobile-menu a:hover { background: var(--blue-500); color:#fff; }
+
+  /* Responsive */
+  @media (max-inline-size: 768px) {
+    .nav-links { display:none; }
+    .hamburger { display:block; }
+  }
+
+  /* Active Mobile Menu */
+  .mobile-menu.show { display:flex; }
+    /* Hero */
+   /* Hero Section Hintergrund */
+/* Parallax-Hero */
+.hero.parallax {
+  position: relative;
+  block-size: 100vh; /* volle Höhe des Bildschirms */
+  background: url('images/kfz-werkstatt.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* Parallax-Effekt */
+  display: flex;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Overlay für besseren Textkontrast */
+.hero.parallax .overlay {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+/* Container über Overlay */
+.hero.parallax .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Textschatten für bessere Lesbarkeit */
+.hero.parallax h1,
+.hero.parallax .lead,
+.hero.parallax .slogan {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* CTA Buttons leicht hervorgehoben */
+.hero.parallax .btn {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+.hero.parallax .btn:hover {
+  transform: translateY(-2px);
+}
+
+
+
+    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center}
+    
+    @media (max-inline-size:960px){.hero-grid{grid-template-columns:1fr;padding:0 10px}}
+    .eyebrow{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(255,209,102,0.08);color:var(--yellow-500);font-weight:700;margin-block-end:12px}
+    h1{font-size:clamp(2rem,4.2vw,3rem);margin:0;background:linear-gradient(90deg,var(--blue-500),var(--blue-400));-webkit-background-clip:text;color:transparent;line-height:1}
+    .lead{color:var(--muted);margin:10px 0 18px;font-size:1.02rem}
+    .slogan{font-size:1.03rem;color:var(--text);opacity:.96;margin-block-end:20px}
+
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;border:none;cursor:pointer;font-weight:700;font-size:.95rem}
+   
+    .btn.primary{background:linear-gradient(90deg,var(--blue-500),var(--blue-400));color:#021427;box-shadow:0 10px 30px rgba(0,114,255,0.12)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+    .btn.yellow{background:linear-gradient(90deg,var(--yellow-500),var(--yellow-400));color:#042233}
+
+    /* profile card */
+    .profile-card{position:relative;display:flex;justify-content:center;align-items:center}
+    .profile-bg{position:absolute;inset-block-start:50%;inset-inline-start:50%;inline-size:300px;block-size:320px;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle, rgba(255,209,102,0.18), rgba(0,114,255,0.06));filter:blur(16px);z-index:0}
+    .profile-img{inline-size:240px;block-size:300px;border-radius:12px;object-fit:cover;border:4px solid var(--blue-500);box-shadow:var(--shadow);position:relative;z-index:2;transition:transform .25s}
+    .profile-img:hover{transform:scale(1.04) rotate(-1deg)}
+
+    /* Sections */
+    section.section{padding:70px 0}
+    .section h2{text-align:center;font-size:2.2rem;margin-block-end:26px;color:var(--text);text-shadow:0 6px 18px rgba(0,114,255,0.04)}
+    .grid{display:grid;gap:20px}
+    .skills-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    @media (max-inline-size:768px){.skills-grid{grid-template-columns:1fr}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 12px 32px rgba(2,6,20,0.5)}
+    .card h3{color:var(--blue-600);margin-block-end:10px;font-size:1.05rem}
+    .card p,.card li{color:var(--muted);font-size:.98rem}
+
+    /* unified cards: subtle blue background with yellow accents */
+    .card.unified{background:linear-gradient(180deg, rgba(0,114,255,0.03), rgba(255,209,102,0.01));border-inline-start:6px solid var(--yellow-500)}
+
+      /* Nur die Werte gelb */
+.card.unified li {
+  color: #f5c400;
+}
+
+/* Aber die Labels (strong) sollen NICHT gelb sein */
+.card.unified li strong {
+  color: inherit; /* übernimmt normales Textfarbe */
+  color: #fff;    /* falls du dunklen Hintergrund hast: weiß */
+}
+
+/* Links auch gelb */
+.card.unified a {
+  color: #f5c400;
+}
+
+    /* image gallery */
+    .image-gallery{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+    .image-gallery img{inline-size:32%;border-radius:10px;box-shadow:0 8px 22px rgba(2,6,23,0.12)}
+    @media (max-inline-size:900px){.image-gallery img{inline-size:48%}}
+    @media (max-inline-size:480px){.image-gallery img{inline-size:90%}}
+
+    /* skills list */
+    .skill-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-block-start:8px}
+    .skill-item{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;color:var(--muted);font-weight:600;border:1px solid rgba(255,255,255,0.03)}
+
+    /* contact */
+    #contact form{max-inline-size:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+    #contact label{font-weight:700;color:var(--blue-600)}
+    #contact .input,#contact textarea{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.02);color:var(--text)}
+    #contact button.btn{align-self:flex-start;background:linear-gradient(90deg,var(--yellow-500),var(--yellow-400));color:#042233;padding:12px 26px;border-radius:999px;font-weight:800}
+    #formFeedback{display:none;margin-block-start:8px;font-weight:700;color:var(--yellow-500)}
+
+    /* video overlay */
+    #videoOverlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,12,0.86);visibility:hidden;opacity:0;transition:opacity .18s,visibility .18s;z-index:1400}
+    #videoOverlay.active{visibility:visible;opacity:1}
+    .video-wrap{max-inline-size:980px;inline-size:94%;position:relative}
+    .video-wrap video{inline-size:100%;block-size:auto;border-radius:8px}
+    .close-video{position:absolute;inset-block-start:-12px;inset-inline-end:-12px;background:var(--blue-600);color:#fff;border-radius:999px;border:none;padding:8px 12px;cursor:pointer;font-weight:700}
+
+    /* top button */
+    .top-btn{position:fixed;inset-inline-end:18px;inset-block-end:18px;background:var(--yellow-500);color:#042233;border-radius:50%;padding:12px;border:none;display:none;z-index:1300}
+    .top-btn.show{display:block}
+
+    /* scroll animations */
+    .scroll-animate{opacity:0;transform:translateY(20px) scale(.98);transition:all .6s ease-out}
+    .scroll-animate.show{opacity:1;transform:none}
+    footer{padding:22px 0;text-align:center;color:var(--muted);font-size:.95rem;border-block-start:1px solid rgba(255,255,255,0.03);margin-block-start:20px}
+  
+  /* Loader Vollbild */
+/* Loader Vollbild über allem */
+/* Loader Vollbild */
+#loader {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  color: var(--text);
+  flex-direction: column;
+  transition: opacity 0.5s ease;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+/* Spinner */
+.spinner {
+  border: 6px solid rgba(255, 255, 255, 0.1);
+  border-block-start: 6px solid var(--yellow-500);
+  border-radius: 50%;
+  inline-size: 60px;
+  block-size: 60px;
+  animation: spin 1s linear infinite;
+  margin-block-end: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loader Text */
+#loader p {
+  color: var(--yellow-500);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-block-end: 12px;
+}
+
+/* Fortschrittsbalken */
+.progress-bar {
+  inline-size: 200px;
+  block-size: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.progress {
+  inline-size: 0%;
+  block-size: 100%;
+  background: var(--yellow-500);
+  border-radius: 3px;
+  transition: width 0.2s ease;
+}
+@media (max-width: 480px){
+  .card.unified { padding: 12px; }
+}
+
+
+  </style>
+</head>
+<body>
+
+
+  <!-- Loader mit Fortschrittsbalken -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="spinner"></div>
+      <p>Lädt, bitte warten...</p>
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    ...
+  </header>
+
+  <!-- REST DEINER SEITE (Hero, About, Projekte...) -->
+
+</body>
+
+
+  <!-- HEADER -->
+   <!-- NAVIGATION -->
+<header class="header">
+  <div class="container nav">
+    <a class="" href="#about">Soufiane Mamoun</a>
+    
+    <!-- Desktop Links -->
+    <ul class="nav-links" role="navigation" aria-label="Hauptnavigation">
+      <li><a href="#about">Über mich</a></li>
+      <li><a href="#experience">Erfahrung</a></li>
+      <li><a href="#projects">Projekte</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+
+    <!-- Hamburger für Handy -->
+    <button class="hamburger" aria-label="Menü öffnen">&#9776;</button>
+  </div>
+
+  <!-- Mobile Menü -->
+  <ul class="mobile-menu" aria-label="Mobile Navigation">
+    <li><a href="#about">Über mich</a></li>
+    <li><a href="#experience">Erfahrung</a></li>
+    <li><a href="#projects">Projekte</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+  </ul>
+</header>
+
+  <!-- HERO -->
+  <section class="hero parallax" id="about" aria-labelledby="hero-title">
+  <div class="overlay"></div>
+  <div class="container hero-grid">
+
+    <!-- Textbereich -->
+    <div class="hero-text">
+      <span class="eyebrow">Kfz-Mechaniker</span>
+      <h1 id="hero-title">Soufiane Mamoun</h1>
+      <div class="lead">Wartung, Diagnose & Reparatur</div>
+      
+      <!-- Persönlicher Slogan -->
+      <p class="slogan">
+        Präzise, zuverlässig und teamorientiert – für jedes Fahrzeug die beste Lösung
+      </p>
+
+      <!-- Call-to-Action Buttons -->
+      <div class="cta-row" role="group" aria-label="Aktionen">
+        <button class="btn yellow" id="openVideoBtn">▶ Bewerbungsvideo</button>
+        <a class="btn yellow btn-cv" href="zertifikate/zertifikate.pdf" download>Lebenslauf herunterladen</a>
+        <a class="btn yellow btn-contact" href="#contact">✉ Kontakt</a>
+      </div>
+
+      <!-- Fachkenntnisse als Liste -->
+      <ul class="skills">
+        <li>Diagnosegeräte: Bosch · Launch · VAG · Delphi</li>
+        <li>Reifenmontage · Bremsenservice · Ölwechsel</li>
+        <li>Inspektionen & Wartung aller Fahrzeugtypen</li>
+      </ul>
+    </div>
+
+    <!-- Profilbild -->
+    <aside class="profile-card" aria-label="Profilbild von Soufiane">
+      <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun bei der Arbeit" class="profile-img">
+    </aside>
+
+  </div>
+</section>
+
+
+  <!-- ABOUT / CV -->
+  <section class="section" id="lebenslauf" aria-labelledby="cv-title">
+    <div class="container">
+      <h2 id="cv-title">Lebenslauf</h2>
+
+      <div class="card unified">
+        <h3>Persönliche Daten</h3>
+        <ul>
+          <li><strong>Name:</strong> Soufiane Mamoun</li>
+          <li><strong>Geburtsdatum / Ort:</strong> 25.05.2000, Nador, Marokko</li>
+          <li><strong>Adresse:</strong> Secteur Nador Regoulares 8, 62000 Nador</li>
+          <li><strong>Telefon:</strong> <a href="tel:+212695566236">+212 695 566 236</a></li>
+          <li><strong>E-Mail:</strong> <a href="mailto:soufianmamoun19@gmail.com">soufianmamoun19@gmail.com</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/soufiane-mamoun-87a76622b" target="_blank" rel="noopener">Profil ansehen</a></li>
+        </ul>
+      </div>
+
+      <div style="margin-block-start:18px" class="card unified">
+        <h3>Ausbildung &amp; Zertifikate</h3>
+        <ul>
+          <li>Techniker in der Raratur von motorenfahrzeugen
+           (Option : Automobile)  — Laarassi Nador (2019–2021)</li>
+          <li>Kfz-Reparateur (Qualifikation ) —  BERUFSSCHULE: FACHINSTITUT FÜR ANGEWANDTE TECHNOLOGIE
+           LAARASSI NADOR (MAROKKO) ( 2017 - 2019)</li>
+          <li>Fachtechniker IT-Entwicklung —  Berufsschule für Informatik und Unternehmensführung 
+          Privates Institut Nador (2021–2023)</li>
+          <li> FREIER KANDIDAT  —    NADOR   Abschluss des Abiturs (2020)</li>
+          <li>Goethe-Zertifikat B1 (ohne Lesen) - (09/2024)</li>
+          <li>TELC B2 (ohne schriftlich) - (02/2025) </li>
+          <li>Führerschein Klasse B</li>
+
+        </ul>
+      </div>
+
+      <div style="margin-block-start:18px" class="card unified" id="experience">
+  <h3>Berufliche Erfahrung</h3>
+  <div class="muted" style="margin-block-end:8px">Praktika & Mitarbeit</div>
+  <ul>
+    <li>
+      <strong>Renault Commerce Maroc, Place de Bandoeng – Casablanca</strong> — 
+      <span style="color:#0509f7; font-weight:800;">Arbeitsbescheinigung</span> (Dezember 2024 – September 2025  im Werkstattbereich)
+      <ul style="margin-inline-start:18px; margin-block-start:4px;">
+        <li>Eigenständige Wartung und Reparatur von Fahrzeugen</li>
+        <li>Vertiefte Diagnosearbeiten mit verschiedenen Diagnosegeräten</li>
+        <li>Reifenwechsel, Auswuchten und Bremsenservice</li>
+        <li>Ölwechsel und Flüssigkeitskontrollen</li>
+        <li>Unterstützung bei Werkstattprojekten und Teamkoordination</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Renault Commerce Maroc, Place de Bandoeng – Casablanca</strong> — 
+      <span style="color:#0509f7; font-weight:800;">Praktikumsbescheinigung</span> (Juli 2024 – November 2024  im Werkstattbereich)
+      <ul style="margin-inline-start:18px; margin-block-start:4px;">
+        <li>Wartung und Inspektion von Fahrzeugen</li>
+        <li>Fehlerdiagnose mit Bosch, Launch, VAG und Delphi</li>
+        <li>Reifenmontage und Auswuchten</li>
+        <li>Bremsenservice und Ölwechsel</li>
+        <li>Teamarbeit im Werkstattalltag</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Verschiedene Werkstätten, Nador</strong> — Praktikant (2017–2021)
+      <ul style="margin-inline-start:18px; margin-block-start:4px;">
+        <li>Allgemeine Werkstattarbeiten</li>
+        <li>Ölwechsel und Wartung</li>
+        <li>Bremsenservice und kleine Reparaturen</li>
+        <li>Erste Erfahrungen in Teamarbeit und Kundenkontakt</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+    <div style="margin-block-start:18px" class="card unified" id="skills">
+  <h3>Kenntnisse &amp; Fähigkeiten</h3>
+
+  <h4>Fachliche Kenntnisse</h4>
+  <ul style="list-style: disc; padding-inline-start:20px;">
+    > <li>Wartung und Reparatur von Kfz</li>
+        <li>Ölwechsel, Bremsenservice und Inspektionen</li>
+        <li>Reifenmontage und Prüfung von mechanischen Bauteilen</li>
+        <li>Diagnose und Behebung von Störungen</li>
+        <li>Getriebe (Boîte de vitesses) – Wartung und Reparatur</li>
+        <li>Komplette Bremsanlagen – Austausch und Reparatur</li>
+        <li>Erfahrung mit gängigen Diagnosegeräten (Bosch, Launch)</li>
+        <li>Umgang mit Werkzeugen und technischen Anweisungen</li>
+  </ul>
+
+  <h4>Persönliche Stärken</h4>
+  <ul style="list-style: disc; padding-inline-start:20px;">
+    <li>Zuverlässigkeit und Pünktlichkeit</li>
+    <li>Teamfähigkeit und kooperatives Arbeiten</li>
+    <li>Lernbereitschaft und hohe Motivation</li>
+    <li>Sorgfältige und präzise Arbeitsweise</li>
+    <li>Verantwortungsbewusstsein im Umgang mit Fahrzeugen und Technik</li>
+  </ul>
+</div>
+
+
+      <div style="margin-block-start:18px" class="card unified">
+        <h3>Sprachkenntnisse</h3>
+        <ul>
+          <li>Arabisch (Muttersprache)</li>
+           <li>Tarifit (Muttersprache)</li>
+          <li>Deutsch B2 </li>
+          <li>Französisch B1 </li>
+          <li>Englisch A2</li>
+
+
+        </ul>
+      </div>
+
+      <div style="margin-block-start:18px" class="card unified">
+        <h3>Interessen</h3>
+        <ul>
+          <li>Fitness </li>
+          <li>Fußball </li>
+          <li>Lesen </li>
+          <li> Tischtennis &amp; Angeln</li>
+
+
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section" id="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <h2 id="projects-title"> Galerie</h2>
+      <div class="grid skills-grid">
+        <div class="card unified scroll-animate">
+          <h3>bei arbeit in renault</h3>
+          <p class="muted">Fehleranalyse mit VAG-Diagnosegerät, Austausch Sensor, Abschlussprüfung.</p>
+        </div>
+        <div class="card unified scroll-animate">
+          <h3>Reifenmontage-Service</h3>
+          <p class="muted">Saisonaler Reifenwechsel, Auswuchten, Übergabekontrolle.</p>
+        </div>
+        <div class="card unified scroll-animate">
+          <h3>IT-Dokumentation (Schulprojekt)</h3>
+          <p class="muted">Kleine Anwendung zur Wartungsdokumentation während IT-Ausbildung.</p>
+        </div>
+      </div>
+
+      <div style="margin-block-start:18px" class="image-gallery scroll-animate">
+        <img src="images/WhatsApp Bild 2025-11-03 um 14.20.08_0b9c6084.jpg" alt="bei arbeit in renault">
+        <img src="images/WhatsApp Bild 2025-11-03 um 14.20.08_37c44231.jpg" alt="Fahrzeugdiagnose">
+        <img src="images/WhatsApp Bild 2025-11-03 um 14.20.08_c7bb0896.jpg" alt="Reifenmontage / Bremsarbeiten">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    
+    <section id="kontakt">
+  <h2>Kontakt</h2>
+  <form id="contactForm">
+  <input type="text" id="name" placeholder="Dein Name" required>
+  <input type="email" id="email" placeholder="Deine E-Mail" required>
+  <textarea id="message" placeholder="Deine Nachricht" required></textarea>
+  <button type="submit">Senden</button>
+</form>
+<div id="status"></div>
+
+</section>
+
+
+
+  <!-- Video overlay -->
+  <div id="videoOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Bewerbungsvideo">
+    <div class="video-wrap">
+      <button class="close-video" id="closeVideoBtn" aria-label="Video schließen">✕</button>
+      <video id="bewerbungVideo" controls playsinline>
+        <source src="video/Recording 2025-11-01 133425.mp4" type="video/mp4">
+        Ihr Browser unterstützt dieses Video nicht.
+      </video>
+    </div>
+  </div>
+
+  <button class="top-btn" id="topBtn" aria-label="Nach oben">↑</button>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 Soufiane Mamoun — Kfz-Mechaniker • Nador — <span style="color:var(--muted)">Alle Rechte vorbehalten</span>
+    </div>
+  </footer>
+
+  <script>
+    /* Video overlay */
+    const overlay = document.getElementById('videoOverlay');
+    const openBtn = document.getElementById('openVideoBtn');
+    const closeBtn = document.getElementById('closeVideoBtn');
+    const video = document.getElementById('bewerbungVideo');
+
+    function openVideo(){
+      overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden','false');
+      setTimeout(()=>video.play().catch(()=>{}),180);
+    }
+    function closeVideo(){
+      overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden','true');
+      try{ video.pause(); video.currentTime = 0; }catch(e){}
+    }
+
+    openBtn?.addEventListener('click', openVideo);
+    closeBtn?.addEventListener('click', closeVideo);
+    overlay?.addEventListener('click', (e)=>{ if(e.target === overlay) closeVideo(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && overlay.classList.contains('active')) closeVideo(); });
+
+    /* Scroll animation */
+    const scrollElements = document.querySelectorAll('.scroll-animate');
+    const elementInView = (el, dividend = 1.25) => {
+      const top = el.getBoundingClientRect().top;
+      return top <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
+    };
+    const displayScrollElement = el => el.classList.add('show');
+    const hideScrollElement = el => el.classList.remove('show');
+    const handleScrollAnimation = () => {
+      scrollElements.forEach(el => {
+        if(elementInView(el)) displayScrollElement(el);
+        else hideScrollElement(el);
+      });
+    };
+    window.addEventListener('scroll', handleScrollAnimation);
+    window.addEventListener('load', handleScrollAnimation);
+
+    /* Top button */
+   const topBtn = document.getElementById('topBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) topBtn.classList.add('show');
+  else topBtn.classList.remove('show');
+});
+
+topBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('show');
+  hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('show'));
+});
+
+
+
+  // Schließen beim Klick auf Link
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('show');
+    });
+  });
+    /* Contact form: try POST to /send (local server). If server responds JSON, show feedback.
+       If you host on GitHub Pages and don't run a server, change form action to formsubmit.co */
+    
+  
+ 
+const form = document.getElementById('contactForm');
+const statusDiv = document.getElementById('status');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault(); // verhindert, dass die Seite neu lädt
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  try {
+    const response = await fetch('http://localhost:3000/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    const result = await response.json();
+    if (result.status === 'success') {
+      statusDiv.textContent = 'Nachricht erfolgreich gesendet!';
+    } else {
+      statusDiv.textContent = 'Fehler beim Senden der Nachricht.';
+    }
+
+  } catch (err) {
+    console.error(err);
+    statusDiv.textContent = 'Fehler beim Senden der Nachricht.';
+  }
+});
+
+
+
+  
+ 
+ 
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    const progress = document.querySelector('.progress');
+    
+    let width = 0;
+    const interval = setInterval(() => {
+      width += 5; // Fortschritt erhöhen
+      if (width > 100) width = 100;
+      progress.style.width = width + '%';
+      if (width === 100) clearInterval(interval);
+    }, 30); // Geschwindigkeit des Fortschritts
+
+    // Fade-Out nach kompletter Ladezeit
+    setTimeout(() => {
+      loader.style.opacity = '0';
+      setTimeout(() => loader.style.display = 'none', 500);
+    }, 1000); // 1 Sekunde zusätzlich für Animation
+  });
+
+
+
+
+
+
+  
+  </script>
+</body>
+</html>
