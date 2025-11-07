@@ -1,0 +1,8 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+
+# Optional: temporäre Dateien
+.DS_Store
