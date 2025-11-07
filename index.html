@@ -179,7 +179,15 @@
     .btn.yellow{background:linear-gradient(90deg,var(--yellow-500),var(--yellow-400));color:#042233}
 
 
-    .profile-card {
+@media (max-width: 768px) {
+  /* Hero Grid: Text und Bild untereinander */
+  .hero-grid {
+    display: block; /* Statt Grid auf Block umstellen */
+    padding: 0 16px;
+  }
+  
+  /* Profilbild im Blockmodus, zentriert */
+  .profile-card {
     margin-block-start: 24px;
     text-align: center;
   }
@@ -191,6 +199,70 @@
     box-shadow: var(--shadow);
     transition: transform 0.25s ease;
   }
+  
+  /* Titel und Eyebrow */
+  .hero-text .eyebrow {
+    font-size: 0.9rem;
+    font-weight: 700;
+    background: var(--yellow-600);
+    color: var(--bg);
+    padding: 5px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.4rem;
+    background: none; /* Farbverlauf entfernen für bessere Lesbarkeit */
+    color: var(--yellow-400);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.75);
+    margin-bottom: 18px;
+  }
+  
+  /* Buttons: gleiches Design und Breite, vertikal mit Abstand */
+  .cta-row {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .btn {
+    inline-size: 100%; /* volle Breite */
+    padding: 14px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 9999px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,114,255,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .btn.yellow {
+    background: var(--yellow-500);
+    color: var(--bg);
+  }
+  .btn.yellow:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+  }
+  .btn-primary {
+    background: var(--blue-500);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+  }
+
+  /* Diagnosegeräte Text */
+  .hero-text > div {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+}
+
+    
     /* profile card */
     .profile-card{position:relative;display:flex;justify-content:center;align-items:center}
     .profile-bg{position:absolute;inset-block-start:50%;inset-inline-start:50%;inline-size:300px;block-size:320px;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle, rgba(255,209,102,0.18), rgba(0,114,255,0.06));filter:blur(16px);z-index:0}
