@@ -407,6 +407,11 @@ h1#hero-title {
      }
    
 }
+     .image-gallery{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+    .image-gallery img{inline-size:32%;border-radius:10px;box-shadow:0 8px 22px rgba(2,6,23,0.12)}
+    @media (max-inline-size:900px){.image-gallery img{inline-size:48%}}
+    @media (max-inline-size:480px){.image-gallery img{inline-size:90%}}
+
 
          #contact .input, #contact textarea {
        font-size: 1rem; /* Standardgröße für Eingabe */
