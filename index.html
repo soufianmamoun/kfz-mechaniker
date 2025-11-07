@@ -178,7 +178,37 @@
     .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
     .btn.yellow{background:linear-gradient(90deg,var(--yellow-500),var(--yellow-400));color:#042233}
 
+/* Für große Desktops (über 1200px) */
+@media (min-width: 1200px) {
+  .container {
+    max-inline-size: 1200px; /* Größerer Container */
+  }
+  .hero-grid {
+    grid-template-columns: 1fr 500px; /* Profilbild etwas größer */
+    gap: 40px;
+  }
+  .image-gallery img {
+    inline-size: 30%; /* Drei Bilder pro Reihe statt zwei */
+  }
+  .btn:hover {
+    transform: scale(1.05); /* Subtile Hover-Effekte */
+  }
+}
 
+/* Allgemein für PC */
+@media (min-width: 769px) {
+  .hero.parallax {
+    background-attachment: fixed; /* Parallax aktivieren */
+  }
+  .nav-links {
+    display: flex; /* Sicherstellen, dass Desktop-Menü sichtbar ist */
+  }
+  .hamburger {
+    display: none; /* Hamburger ausblenden */
+  }
+}
+
+    
 @media (max-width: 480px) {
   .hero-grid {
     display: block;
