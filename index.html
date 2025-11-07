@@ -38,7 +38,32 @@
     margin-bottom: 15px; /* Etwas mehr Abstand */
   }
 }
-    
+     @media (min-width: 1200px) {
+     #contact label {
+       font-size: 1.1rem; /* Größere Labels */
+       color: var(--blue-600); /* Dunkler Blau für Labels */
+     }
+     
+     #contact .input, #contact textarea {
+       font-size: 1.1rem; /* Größere Eingabe */
+       color: var(--text);
+       border-color: var(--blue-400); /* Blaue Rahmenfarbe */
+     }
+     
+     #contact button.btn {
+       font-size: 1.2rem; /* Größerer Button-Text */
+       background: var(--yellow-500);
+       color: var(--bg);
+     }
+     
+     #formFeedback.success {
+       color: var(--yellow-500);
+     }
+     
+     #formFeedback.error {
+       color: #ff4d4f;
+     }
+   }
 
     /* GELBE BUTTONS */
 .btn.yellow,
