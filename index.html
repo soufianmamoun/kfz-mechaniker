@@ -30,7 +30,39 @@
       --glass: rgba(255,255,255,0.03);
       --shadow: 0 14px 40px rgba(2,6,23,0.6);
     }
+/* Modern Buttons */
+.btn-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 50px; /* stark abgerundet */
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #ffd166, #ef476f); /* schöner Farbverlauf */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* leichter Schatten */
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
 
+.btn-modern:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.btn-modern:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Optional: zweiter Button mit anderem Farbverlauf */
+.btn-modern.contact {
+  background: linear-gradient(135deg, #06d6a0, #118ab2);
+}
 
     /* GELBE BUTTONS */
 .btn.yellow,
@@ -651,9 +683,10 @@ h1#hero-title {
 
       <!-- Call-to-Action Buttons -->
       <div class="cta-row" role="group" aria-label="Aktionen">
-        <a class="btn yellow btn-cv" href="zertifikate/zertifikate.pdf" download>Unterlagen</a>
-        <a class="btn yellow btn-contact" href="#contact">✉ Kontakt</a>
-      </div>
+  <a class="btn-modern" href="zertifikate/zertifikate.pdf" download>Unterlagen</a>
+  <a class="btn-modern contact" href="#contact">✉ Kontakt</a>
+</div>
+
 
       <!-- Skills / kurze Info -->
       <div style="margin-block-start:14px;color:var(--muted)">
@@ -748,7 +781,7 @@ h1#hero-title {
 
   <h4>Fachliche Kenntnisse</h4>
   <ul style="list-style: disc; padding-inline-start:20px;">
-    > <li>Wartung und Reparatur von Kfz</li>
+     <li>Wartung und Reparatur von Kfz</li>
         <li>Ölwechsel, Bremsenservice und Inspektionen</li>
         <li>Reifenmontage und Prüfung von mechanischen Bauteilen</li>
         <li>Diagnose und Behebung von Störungen</li>
