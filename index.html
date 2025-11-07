@@ -179,26 +179,26 @@
     .btn.yellow{background:linear-gradient(90deg,var(--yellow-500),var(--yellow-400));color:#042233}
 
 
-@media (max-width: 768px) {
-  /* Hero Grid: Text und Bild untereinander */
+@media (max-width: 480px) {
   .hero-grid {
-    display: block; /* Statt Grid auf Block umstellen */
-    padding: 0 16px;
+    display: block;
+    padding: 0 15px;
   }
-  
+
   /* Profilbild im Blockmodus, zentriert */
   .profile-card {
-    margin-block-start: 24px;
+    margin-top: 30px;
     text-align: center;
   }
   .profile-img {
-    inline-size: 80vw; /* Max 80% der Viewport-Breite */
-    block-size: auto;
-    border-radius: 12px;
-    border: 4px solid var(--blue-500);
-    box-shadow: var(--shadow);
-    transition: transform 0.25s ease;
+    width: 80vw;
+    height: auto;
   }
+    .eyebrow {
+  background-color: rgba(255, 209, 102, 0.20);
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-weight: 700;
   
   /* Titel und Eyebrow */
   .hero-text .eyebrow {
@@ -212,13 +212,12 @@
     margin-bottom: 12px;
   }
   
-  .hero-text h1 {
-    font-size: 2.4rem;
-    background: none; /* Farbverlauf entfernen für bessere Lesbarkeit */
-    color: var(--yellow-400);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.75);
-    margin-bottom: 18px;
-  }
+       .hero-text h1 {
+  color: #ffd166; /* Helles Gelb, besser sichtbar */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: 800;
+}
+     
   
   /* Buttons: gleiches Design und Breite, vertikal mit Abstand */
   .cta-row {
@@ -241,10 +240,11 @@
     background: var(--yellow-500);
     color: var(--bg);
   }
-  .btn.yellow:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-  }
+  .btn-yellow:hover, .btn-blue:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 15px rgba(255, 209, 102, 0.4);
+  transition: all 0.3s ease;
+}
   .btn-primary {
     background: var(--blue-500);
     color: #fff;
@@ -253,7 +253,10 @@
     filter: brightness(1.1);
     transform: translateY(-2px);
   }
-
+  
+.hero-text > *:not(:last-child) {
+  margin-bottom: 16px;
+}
   /* Diagnosegeräte Text */
   .hero-text > div {
     font-size: 1rem;
