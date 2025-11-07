@@ -32,63 +32,46 @@
  
   }
 
-    .profile-container {
+/* Container für Bild + Buttons */
+.profile-container {
   position: relative;
   display: inline-block;
-  margin-top: 20px;
 }
 
-/* Bild */
+/* Profilbild */
 .profile-pic {
-  width: 150px;
+  width: 160px;
   border-radius: 50%;
 }
 
-/* Buttons */
-.btn-modern {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-decoration: none;
-  color: #fff;
-  background: linear-gradient(135deg, #ffd166, #ef476f);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-modern:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-.btn-modern.contact {
-  background: linear-gradient(135deg, #06d6a0, #118ab2);
-}
-
-/* Mobile-only Buttons */
+/* Buttons (Standard: aus) */
 .mobile-buttons {
   display: none;
 }
 
-/* Mobile Layout */
+/* Buttons NUR auf Handy anzeigen */
 @media (max-width: 768px) {
+
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+  }
+
   .mobile-buttons {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 50%;
-    right: -130px; /* neben das Bild */
-    transform: translateY(-50%);
     gap: 10px;
   }
+
+  .btn-modern {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+    border-radius: 20px;
+  }
 }
+
 
 /* Skills / Info */
 .profile-skills {
@@ -774,14 +757,16 @@ h1#hero-title {
       <span class="eyebrow">Kfz-Mechaniker</span>
       <h1 id="hero-title">Soufiane Mamoun</h1>
 
-      <div class="profile-container">
-        <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun" class="profile-pic">
+     <div class="profile-container">
+  <img src="images/IMG_6471.JPG" class="profile-pic">
 
-        <!-- Mobile-only Buttons -->
-        <div class="mobile-buttons">
-          <a class="btn-modern" href="zertifikate/zertifikate.pdf" download>Unterlagen</a>
-          <a class="btn-modern contact" href="#contact">✉ Kontakt</a>
-        </div>
+  <!-- Buttons nur für Handy -->
+  <div class="mobile-buttons">
+    <a href="#contact" class="btn-modern">Kontakt</a>
+    <a href="soufiane-cv.pdf" class="btn-modern contact">Lebenslauf</a>
+  </div>
+
+
 
         <!-- Skills / kurze Info -->
         <div class="profile-skills">
