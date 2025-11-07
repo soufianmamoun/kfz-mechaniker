@@ -29,7 +29,74 @@
       --yellow-600: #e6b800;
       --glass: rgba(255,255,255,0.03);
       --shadow: 0 14px 40px rgba(2,6,23,0.6);
-    }
+ 
+  }
+
+    .profile-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* Bild */
+.profile-pic {
+  width: 150px;
+  border-radius: 50%;
+}
+
+/* Buttons */
+.btn-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #ffd166, #ef476f);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-modern:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.btn-modern.contact {
+  background: linear-gradient(135deg, #06d6a0, #118ab2);
+}
+
+/* Mobile-only Buttons */
+.mobile-buttons {
+  display: none;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .mobile-buttons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    right: -130px; /* neben das Bild */
+    transform: translateY(-50%);
+    gap: 10px;
+  }
+}
+
+/* Skills / Info */
+.profile-skills {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 /* Buttons (wie vorher) */
 .btn-modern {
   display: inline-flex;
@@ -698,27 +765,38 @@ h1#hero-title {
         <h1 id="hero-title">Soufiane Mamoun</h1>
 
       
-<div class="profile-container">
-  <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun" class="profile-pic">
-      <!-- Call-to-Action Buttons -->
-      <div class="mobile-buttons">
-    <a class="btn-modern" href="zertifikate/zertifikate.pdf" download>Unterlagen</a>
-    <a class="btn-modern contact" href="#contact">✉ Kontakt</a>
-  </div>
+<!-- HERO -->
+<section class="hero parallax" id="about" aria-labelledby="hero-title">
+  <div class="overlay"></div>
+  <div class="container hero-grid">
+    <!-- Textbereich -->
+    <div class="hero-text">
+      <span class="eyebrow">Kfz-Mechaniker</span>
+      <h1 id="hero-title">Soufiane Mamoun</h1>
 
+      <div class="profile-container">
+        <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun" class="profile-pic">
 
-      <!-- Skills / kurze Info -->
-      <div style="margin-block-start:14px;color:var(--muted)">
-        Diagnosegeräte: Bosch · Launch · VAG · Delphi — Reifenmontage · Bremsen · Ölwechsel
+        <!-- Mobile-only Buttons -->
+        <div class="mobile-buttons">
+          <a class="btn-modern" href="zertifikate/zertifikate.pdf" download>Unterlagen</a>
+          <a class="btn-modern contact" href="#contact">✉ Kontakt</a>
+        </div>
+
+        <!-- Skills / kurze Info -->
+        <div class="profile-skills">
+          Diagnosegeräte: Bosch · Launch · VAG · Delphi — Reifenmontage · Bremsen · Ölwechsel
+        </div>
       </div>
     </div>
 
-    <!-- Profilbild -->
+    <!-- Profilbild (optional für Desktop) -->
     <aside class="profile-card" aria-label="Profilbild von Soufiane">
       <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun bei der Arbeit" class="profile-img">
     </aside>
   </div>
 </section>
+
 
 
 
