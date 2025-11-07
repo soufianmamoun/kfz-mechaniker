@@ -133,7 +133,17 @@
     .nav-links { display:none; }
     .hamburger { display:block; }
   }
-
+h1#hero-title {
+    display: none; /* Versteckt den Titel auf kleinen Bildschirmen */
+  }
+    .hero-text::before {
+    content: "Soufiane Mamoun"; /* Kleiner Ersatztext */
+    font-size: 1.5rem;
+    color: var(--yellow-500);
+    display: block;
+    margin-bottom: 10px;
+  }
+    
   /* Active Mobile Menu */
   .mobile-menu.show { display:flex; }
     /* Hero */
@@ -526,6 +536,8 @@
     <!-- Textbereich -->
     <div class="hero-text">
       <span class="eyebrow">Kfz-Mechaniker</span>
+        <h1 id="hero-title">Soufiane Mamoun</h1>
+
       
 
       <!-- Call-to-Action Buttons -->
