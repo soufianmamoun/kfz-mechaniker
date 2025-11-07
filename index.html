@@ -567,21 +567,25 @@
   </section>
 
   <!-- Contact -->
-<section class="section" id="contact" aria-labelledby="contact-title">
-  <div class="container">
-    
-    <section id="kontakt">
+<section id="contact">
   <h2>Kontakt</h2>
-  <form id="contactForm">
-  <input type="text" id="name" placeholder="Dein Name" required>
-  <input type="email" id="email" placeholder="Deine E-Mail" required>
-  <textarea id="message" placeholder="Deine Nachricht" required></textarea>
-  <button type="submit">Senden</button>
-</form>
-<div id="status"></div>
+  <form action="https://formsubmit.co/deine.email@gmail.com" method="POST">
+    <!-- Versteckte Felder für Formsubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://soufianmamoun.github.io/kfz-portfolio/thanks.html">
 
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Nachricht:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Senden</button>
+  </form>
 </section>
-
 
 
   <!-- Video overlay -->
