@@ -38,6 +38,7 @@
     margin-bottom: 15px; /* Etwas mehr Abstand */
   }
 }
+    
 
     /* GELBE BUTTONS */
 .btn.yellow,
@@ -224,7 +225,14 @@
 
     
  @media (max-width: 480px) {
-     .hero-grid {
+   .logo {
+    font-size: 1rem; /* Kleiner als das Standard 1.1rem */
+    font-weight: 800; /* Etwas weniger fett für bessere Lesbarkeit */
+    letter-spacing: 0.2px; /* Leichter Buchstabenabstand */
+    padding: 8px 10px; /* Etwas mehr Padding für Touch-Freundlichkeit */
+  } 
+   
+   .hero-grid {
     display: block; /* Block-Layout für einfaches Stapeln */
     padding: 0 15px;
     text-align: center; /* Zentriert alles für bessere Lesbarkeit */
