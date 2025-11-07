@@ -342,10 +342,10 @@
 
   <!-- HEADER -->
    <!-- NAVIGATION -->
+<!-- HEADER -->
 <header class="header">
   <div class="container nav">
-    <a class="" href="#about">Soufiane Mamoun</a>
-    
+    <a class="logo" href="#about">Soufiane Mamoun</a>
     <!-- Desktop Links -->
     <ul class="nav-links" role="navigation" aria-label="Hauptnavigation">
       <li><a href="#about">Über mich</a></li>
@@ -353,11 +353,13 @@
       <li><a href="#projects">Projekte</a></li>
       <li><a href="#contact">Kontakt</a></li>
     </ul>
-
     <!-- Hamburger für Handy -->
-    <button class="hamburger" aria-label="Menü öffnen">&#9776;</button>
+    <button class="hamburger" aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
-
   <!-- Mobile Menü -->
   <ul class="mobile-menu" aria-label="Mobile Navigation">
     <li><a href="#about">Über mich</a></li>
@@ -367,32 +369,37 @@
   </ul>
 </header>
 
-  <!-- HERO -->
-  <section class="hero parallax" id="about" aria-labelledby="hero-title">
+<!-- HERO -->
+<section class="hero parallax" id="about" aria-labelledby="hero-title">
   <div class="overlay"></div>
   <div class="container hero-grid">
+    <!-- Textbereich -->
     <div class="hero-text">
-      <span class="eyebrow">Kfz-Mechaniker </span>
+      <span class="eyebrow">Kfz-Mechaniker</span>
       <h1 id="hero-title">Soufiane Mamoun</h1>
       <div class="lead">Kfz-Mechaniker | Wartung, Diagnose & Reparatur</div>
       <p class="slogan">Präzision und Teamarbeit für jedes Fahrzeug</p>
 
+      <!-- Call-to-Action Buttons -->
       <div class="cta-row" role="group" aria-label="Aktionen">
         <button class="btn yellow" id="openVideoBtn">▶ Bewerbungsvideo</button>
         <a class="btn yellow btn-cv" href="zertifikate/zertifikate.pdf" download>Lebenslauf herunterladen</a>
         <a class="btn yellow btn-contact" href="#contact">✉ Kontakt</a>
       </div>
 
+      <!-- Skills / kurze Info -->
       <div style="margin-block-start:14px;color:var(--muted)">
         Diagnosegeräte: Bosch · Launch · VAG · Delphi — Reifenmontage · Bremsen · Ölwechsel
       </div>
     </div>
 
+    <!-- Profilbild -->
     <aside class="profile-card" aria-label="Profilbild von Soufiane">
       <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun bei der Arbeit" class="profile-img">
     </aside>
   </div>
 </section>
+
 
 
   <!-- ABOUT / CV -->
@@ -643,22 +650,24 @@ topBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-const hamburger = document.querySelector('.hamburger');
+<!-- Hamburger Script -->
+
+  const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
 
   hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('show');
-  hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('show'));
-});
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('show');
+  });
 
-
-
-  // Schließen beim Klick auf Link
   document.querySelectorAll('.mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('show');
+      hamburger.classList.remove('active');
     });
   });
+
+  
     /* Contact form: try POST to /send (local server). If server responds JSON, show feedback.
        If you host on GitHub Pages and don't run a server, change form action to formsubmit.co */
     
