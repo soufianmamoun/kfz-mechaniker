@@ -207,24 +207,95 @@
 
     
  @media (max-width: 480px) {
-      .hero-grid { display: block; padding: 0 15px; }
-      .profile-card { margin-top: 30px; text-align: center; }
-      .profile-img { width: 70vw; height: auto; }
-      .eyebrow { background-color: rgba(255, 209, 102, 0.20); padding: 6px 14px; border-radius: 12px; font-weight: 700; }
-      .hero-text .eyebrow { font-size: 0.9rem; font-weight: 700; background: var(--yellow-600); color: var(--bg); padding: 5px 12px; border-radius: 12px; display: inline-block; margin-bottom: 12px; }
-      .hero-text h1 { color: #ffd166; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); font-weight: 800; }
-      .cta-row { display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px; }
-      .btn { inline-size: 100%; padding: 14px 0; font-weight: 700; font-size: 1.1rem; border-radius: 9999px; text-align: center; box-shadow: 0 4px 12px rgba(0,114,255,0.2); transition: background-color 0.3s ease, transform 0.3s ease; }
-      .btn.yellow { background: var(--yellow-500); color: var(--bg); }
-      .btn-yellow:hover, .btn-blue:hover { filter: brightness(1.1); box-shadow: 0 6px 15px rgba(255, 209, 102, 0.4); transition: all 0.3s ease; }
+     .hero-grid {
+    display: block; /* Block-Layout für einfaches Stapeln */
+    padding: 0 15px;
+    text-align: center; /* Zentriert alles für bessere Lesbarkeit */
+  }
+   
+.profile-card {
+    margin-top: 30px;
+    text-align: center;
+  }
+.profile-img {
+    width: 70vw; /* 70% der Bildschirmbreite */
+    height: auto; /* Verhältnis beibehalten */
+    max-width: 250px; /* Begrenzung für sehr schmale Geräte */
+  }
+/* Eyebrow und Titel */
+  .eyebrow {
+    background-color: rgba(255, 209, 102, 0.20);
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.9rem; /* Konsolidiert und kleiner */
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+   .hero-text .eyebrow { font-size: 0.9rem; font-weight: 700; background: var(--yellow-600); color: var(--bg); padding: 5px 12px; border-radius: 12px; display: inline-block; margin-bottom: 12px; }
+.hero-text h1 {
+    color: var(--yellow-500); /* Verwendet CSS-Variable statt hartcodiert */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 800;
+    font-size: 2rem; /* Kleinere H1 für Mobil */
+    margin-bottom: 10px;
+  }
+   /* Buttons */
+  .cta-row {
+    display: flex;
+    flex-direction: column; /* Vertikal stapeln */
+    gap: 14px;
+    margin-bottom: 16px;
+    align-items: center; /* Zentrieren */
+  }
+  
+  .btn {
+    inline-size: 100%; /* Volle Breite für Touch */
+    padding: 14px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 9999px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 114, 255, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+ .btn.yellow {
+    background: var(--yellow-500); /* Verwendet Variable */
+    color: var(--bg);
+  }
+   .btn:hover {
+    filter: brightness(1.1); /* Vereinfacht für alle Buttons */
+    box-shadow: 0 6px 15px rgba(255, 209, 102, 0.4);
+    transform: translateY(-2px); /* Leichter Hover-Effekt */
+  }
+   .btn-yellow:hover, .btn-blue:hover { filter: brightness(1.1); box-shadow: 0 6px 15px rgba(255, 209, 102, 0.4); transition: all 0.3s ease; }
       .btn-primary { background: var(--blue-500); color: #fff; }
       .btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); }
-      .hero-text > *:not(:last-child) { margin-bottom: 16px; }
-      .hero-text > div { font-size: 1rem; color: var(--muted); line-height: 1.4; }
-      .image-gallery img { inline-size: 85%; margin-bottom: 10px; }
-      .section { padding: 50px 0; }
-      .card.unified { padding: 12px; }
-    }
+/* Text und Abstände */
+  .hero-text > *:not(:last-child) {
+    margin-bottom: 16px;
+  }
+   
+ .hero-text > div {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-top: 10px; /* Weniger Abstand */
+  }
+/* Galerie */
+  .image-gallery img {
+    inline-size: 85%; /* Kleinere Bilder */
+    margin-bottom: 10px;
+  }
+   /* Allgemeine Sektionen */
+  .section {
+    padding: 50px 0; /* Weniger vertikaler Raum */
+  }
+  
+  .card.unified {
+    padding: 12px; /* Weniger Padding in Karten */
+  }
+}
 
     
     /* profile card */
@@ -435,7 +506,6 @@
 
       <!-- Call-to-Action Buttons -->
       <div class="cta-row" role="group" aria-label="Aktionen">
-        <button class="btn yellow" id="openVideoBtn">▶ Bewerbungsvideo</button>
         <a class="btn yellow btn-cv" href="zertifikate/zertifikate.pdf" download>Lebenslauf herunterladen</a>
         <a class="btn yellow btn-contact" href="#contact">✉ Kontakt</a>
       </div>
