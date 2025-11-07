@@ -202,6 +202,122 @@ form#contactForm button:hover { background-color: #0056b3; }
 /* Footer */
 footer { padding: 22px 0; text-align: center; color: var(--muted); font-size: .95rem; border-top: 1px solid rgba(255,255,255,0.03); margin-top: 20px; }
 
+/* ============================
+   Modern Responsive Header
+============================ */
+
+/* Header Container */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  background: rgba(6,16,41,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+}
+
+/* Logo */
+.header .logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--yellow-500);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* Desktop Navigation */
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--blue-400);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+.nav-links a:hover {
+  background: var(--yellow-500);
+  color: var(--bg);
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--yellow-500);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(6,16,41,0.95);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  transition: right 0.35s ease;
+  z-index: 1050;
+}
+.mobile-menu a {
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.mobile-menu a:hover {
+  color: var(--yellow-500);
+}
+
+/* Hamburger Active State Animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Show Mobile Menu */
+.mobile-menu.show {
+  right: 0;
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+
+    
   </style>
 </head>
 <body>
