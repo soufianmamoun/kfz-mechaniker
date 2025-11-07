@@ -30,40 +30,7 @@
       --glass: rgba(255,255,255,0.03);
       --shadow: 0 14px 40px rgba(2,6,23,0.6);
     }
-/* Für große Desktops (PC) */
-@media (min-width: 1200px) {
-  h1#hero-title {
-    font-size: 4.5rem; /* Größer als das Standard-clamp (ca. 3rem max) */
-    line-height: 1.1; /* Bessere Lesbarkeit */
-    margin-bottom: 15px; /* Etwas mehr Abstand */
-  }
-}
-     @media (min-width: 1200px) {
-     #contact label {
-       font-size: 1.1rem; /* Größere Labels */
-       color: var(--blue-600); /* Dunkler Blau für Labels */
-     }
-     
-     #contact .input, #contact textarea {
-       font-size: 1.1rem; /* Größere Eingabe */
-       color: var(--text);
-       border-color: var(--blue-400); /* Blaue Rahmenfarbe */
-     }
-     
-     #contact button.btn {
-       font-size: 1.2rem; /* Größerer Button-Text */
-       background: var(--yellow-500);
-       color: var(--bg);
-     }
-     
-     #formFeedback.success {
-       color: var(--yellow-500);
-     }
-     
-     #formFeedback.error {
-       color: #ff4d4f;
-     }
-   }
+
 
     /* GELBE BUTTONS */
 .btn.yellow,
@@ -242,6 +209,62 @@ h1#hero-title {
     font-size: 1.5rem; /* Größer als das Standard 1.1rem */
     font-weight: 900; /* Noch fetter für mehr Impact */
     letter-spacing: 0.5px; /* Leichter Buchstabenabstand für Eleganz */
+  }
+}
+
+    /* Für Handy (kleiner) */
+@media (max-width: 480px) {
+  #contact label {
+    font-size: 0.9rem; /* Kleinere Labels */
+    color: var(--blue-500); /* Blaue Farbe für Labels */
+  }
+  
+  #contact .input, #contact textarea {
+    font-size: 1rem; /* Standardgröße für Eingabe */
+    color: var(--text); /* Normale Textfarbe */
+    border-color: var(--muted); /* Gedämpfte Rahmenfarbe */
+  }
+  
+  #contact button.btn {
+    font-size: 1.1rem; /* Größerer Button-Text */
+    background: var(--yellow-500); /* Gelber Hintergrund */
+    color: var(--bg); /* Dunkler Text */
+  }
+  
+  #formFeedback.success {
+    color: var(--yellow-500); /* Grüne/Gelbe Erfolgsfarbe */
+  }
+  
+  #formFeedback.error {
+    color: #ff4d4f; /* Rote Fehlerfarbe */
+  }
+}
+
+/* Für PC (größer) */
+@media (min-width: 1200px) {
+  #contact label {
+    font-size: 1.1rem; /* Größere Labels */
+    color: var(--blue-600); /* Dunkler Blau für Labels */
+  }
+  
+  #contact .input, #contact textarea {
+    font-size: 1.1rem; /* Größere Eingabe */
+    color: var(--text);
+    border-color: var(--blue-400); /* Blaue Rahmenfarbe */
+  }
+  
+  #contact button.btn {
+    font-size: 1.2rem; /* Größerer Button-Text */
+    background: var(--yellow-500);
+    color: var(--bg);
+  }
+  
+  #formFeedback.success {
+    color: var(--yellow-500);
+  }
+  
+  #formFeedback.error {
+    color: #ff4d4f;
   }
 }
 
