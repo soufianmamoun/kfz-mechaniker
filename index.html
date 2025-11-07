@@ -560,7 +560,9 @@
   <div class="container">
     <h2 id="contact-title">Kontakt</h2>
 
-    <form id="contactForm">
+    <form id="contactForm" action="https://formsubmit.co/soufianmamoun19@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://kfz-mechaniker.vercel.app/thanks.html">
+      
       <!-- Felder -->
       <label for="name">Name</label>
       <input id="name" name="name" class="input" required placeholder="Ihr Name">
@@ -577,6 +579,7 @@
     </form>
   </div>
 </section>
+
 
 
   <!-- Video overlay -->
@@ -652,20 +655,19 @@ topBtn.addEventListener('click', () => {
 
 <!-- Hamburger Script -->
 
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mobileMenu.classList.toggle('show');
-  });
-
-  document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('show');
-      hamburger.classList.remove('active');
+  // Hamburger
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('show');
     });
-  });
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('show');
+        hamburger.classList.remove('active');
+      });
+    });
 
   
     /* Contact form: try POST to /send (local server). If server responds JSON, show feedback.
