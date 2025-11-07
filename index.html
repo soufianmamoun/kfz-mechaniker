@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="Soufiane Mamoun — Kfz-Mechaniker Portfolio">
   <meta property="og:description" content="Portfolio & Bewerbung — Soufiane Mamoun, Kfz-Mechaniker.">
-  <meta property="og:image" content="https://kfz-mechaniker.vercel.app/images/ChatGPT Image Nov 6, 2025, 07_01_57 PM.JPG">
+  <meta property="og:image" content="https://kfz-mechaniker.vercel.app/images/ChatGPT Image Nov 6, 2025, 07_01_57 PM.png">
   <meta property="og:url" content="https://kfz-mechaniker.vercel.app">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -241,6 +241,9 @@ h1#hero-title {
     letter-spacing: 0.2px; /* Leichter Buchstabenabstand */
     padding: 8px 10px; /* Etwas mehr Padding für Touch-Freundlichkeit */
   } 
+   .section#lebenslauf {
+       padding: 40px 0; /* Weniger vertikaler Raum */
+     }
    
    .hero-grid {
     display: block; /* Block-Layout für einfaches Stapeln */
@@ -328,8 +331,28 @@ h1#hero-title {
   }
   
   .card.unified {
-    padding: 12px; /* Weniger Padding in Karten */
-  }
+       padding: 10px; /* Weniger Padding */
+       margin-bottom: 15px; /* Abstand zwischen Karten */
+     }
+    .card.unified h3 {
+       font-size: 1rem; /* Kleinere Überschriften */
+       margin-bottom: 8px;
+     }
+     
+     .card.unified ul {
+       padding-left: 15px; /* Weniger Einzug */
+     }
+     
+     .card.unified li {
+       font-size: 0.9rem; /* Kleinere Listenpunkte */
+       line-height: 1.3; /* Bessere Lesbarkeit */
+       margin-bottom: 5px;
+     }
+     
+     .card.unified strong {
+       color: var(--text); /* Labels in normaler Farbe */
+     }
+   
 }
 
     
