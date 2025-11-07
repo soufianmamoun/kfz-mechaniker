@@ -677,7 +677,9 @@ const form = document.getElementById('contactForm');
 const statusDiv = document.getElementById('status');
 
 form.addEventListener('submit', async (e) => {
-  e.preventDefault(); // verhindert, dass die Seite neu lädt
+  e.preventDefault();
+  // fetch an localhost
+});
 
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
