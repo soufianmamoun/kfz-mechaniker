@@ -28,6 +28,55 @@
   --glass: rgba(255,255,255,0.03);
   --shadow: 0 14px 40px rgba(2,6,23,0.6);
 }
+/* Formular Inputs & Textarea */
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.input:focus {
+  border-color: var(--blue-500);
+  box-shadow: 0 0 6px rgba(0,114,255,0.35);
+  outline: none;
+}
+
+/* Button */
+#sendButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-weight: 700;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--yellow-500), var(--yellow-400));
+  color: #042233;
+  transition: all 0.3s ease;
+}
+#sendButton:hover {
+  filter: brightness(1.1);
+}
+
+/* Feedback */
+.form-feedback {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--yellow-500);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.form-feedback.show {
+  opacity: 1;
+}
 
 /* ==========================
    Reset & Basis
@@ -513,21 +562,28 @@ footer { padding:22px 0; text-align:center; color:var(--muted); font-size:.95rem
 <section id="contact">
   <h2>Kontakt</h2>
 <form id="contactForm" action="https://formsubmit.co/soufianmamoun19@gmail.com" method="POST">
-    <!-- Versteckte Felder für Formsubmit -->
-    <input type="hidden" name="_captcha" value="false">
-   <input type="hidden" name="_next" value="https://kfz-mechaniker.vercel.app/thanks.html">
- 
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+  <!-- Redirect nach Senden -->
+  <input type="hidden" name="_next" value="https://kfz-mechaniker.vercel.app/thanks.html">
 
-    <label for="email">E-Mail:</label>
-    <input type="email" id="email" name="email" required>
+  <!-- Name -->
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text" class="input" required placeholder="Ihr Name">
 
-    <label for="message">Nachricht:</label>
-    <textarea id="message" name="message" required></textarea>
+  <!-- Email -->
+  <label for="email">E-Mail</label>
+  <input id="email" name="email" type="email" class="input" required placeholder="Ihre E-Mail-Adresse">
 
-    <button type="submit">Senden</button>
-  </form>
+  <!-- Nachricht -->
+  <label for="message">Nachricht</label>
+  <textarea id="message" name="message" rows="6" required placeholder="Ihre Nachricht..." class="input"></textarea>
+
+  <!-- Button -->
+  <button type="submit" class="btn yellow" id="sendButton">Nachricht senden</button>
+
+  <!-- Feedback -->
+  <div id="formFeedback" class="form-feedback"></div>
+</form>
+
 </section>
 
 
@@ -626,37 +682,36 @@ hamburger.addEventListener('click', () => {
     
   
  
+<script>
 const form = document.getElementById('contactForm');
-const statusDiv = document.getElementById('status');
+const feedback = document.getElementById('formFeedback');
 
-form.addEventListener('submit', async (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  // fetch an localhost
-});
+  
+  const formData = new FormData(form);
 
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
-
-  try {
-    const response = await fetch('http://localhost:3000/send', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message })
-    });
-
-    const result = await response.json();
-    if (result.status === 'success') {
-      statusDiv.textContent = 'Nachricht erfolgreich gesendet!';
-    } else {
-      statusDiv.textContent = 'Fehler beim Senden der Nachricht.';
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
     }
-
-  } catch (err) {
-    console.error(err);
-    statusDiv.textContent = 'Fehler beim Senden der Nachricht.';
-  }
+  }).then(response => {
+    if(response.ok) {
+      feedback.textContent = "Vielen Dank! Ihre Nachricht wurde gesendet.";
+      feedback.classList.add('show');
+      form.reset();
+    } else {
+      feedback.textContent = "Hoppla! Es gab ein Problem. Bitte versuchen Sie es erneut.";
+      feedback.classList.add('show');
+    }
+  }).catch(() => {
+    feedback.textContent = "Hoppla! Es gab ein Problem. Bitte versuchen Sie es erneut.";
+    feedback.classList.add('show');
+  });
 });
+</script>
 
 
 
