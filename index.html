@@ -685,6 +685,59 @@ h1#hero-title {
 .hamburger.active span:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -5px);
 }
+/* Grid-Aufteilung für Hero */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Profilbild-Frame */
+.profile-frame {
+  width: 100%;
+  background: linear-gradient(135deg, #ffc400, #ffab00, #ff9100);
+  padding: 6px;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Buttons nur Handy */
+.mobile-buttons {
+  display: none;
+  margin-top: 14px;
+}
+
+.mobile-buttons .btn {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Mobile Version */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .profile-card {
+    order: -1;
+    margin-bottom: 16px;
+  }
+
+  .mobile-buttons {
+    display: block;
+  }
+}
+
+    
   </style>
 </head>
 <body>
@@ -749,7 +802,7 @@ h1#hero-title {
 
   <div class="container hero-grid">
 
-    <!-- Textbereich -->
+    <!-- TEXT -->
     <div class="hero-text">
       <span class="eyebrow">Kfz-Mechaniker</span>
       <h1 id="hero-title">Soufiane Mamoun</h1>
@@ -757,22 +810,24 @@ h1#hero-title {
       <!-- Buttons nur für Handy -->
       <div class="mobile-buttons">
         <a class="btn yellow" href="zertifikate/zertifikate.pdf" download>Unterlagen</a>
-        <a href="#contact" class="btn-modern contact">✉ Kontakt</a>
+        <a href="#contact" class="btn yellow">✉ Kontakt</a>
       </div>
 
-      <!-- Skills / kurze Info -->
       <div class="profile-skills">
         Diagnosegeräte: Bosch · Launch · VAG · Delphi — Reifenmontage · Bremsen · Ölwechsel
       </div>
     </div>
 
-    <!-- Profilbild -->
+    <!-- PROFILBILD -->
     <aside class="profile-card" aria-label="Profilbild von Soufiane">
-      <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun bei der Arbeit" class="profile-img">
+      <div class="profile-frame">
+        <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun" class="profile-img">
+      </div>
     </aside>
 
   </div>
 </section>
+
 
 
 
