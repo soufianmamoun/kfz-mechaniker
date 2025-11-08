@@ -40,7 +40,7 @@
 
 /* Profilbild */
 .profile-pic {
-  width: 160px;
+  inline-size: 160px;
   border-radius: 50%;
 }
 
@@ -75,7 +75,7 @@
 
 /* Skills / Info */
 .profile-skills {
-  margin-top: 14px;
+  margin-block-start: 14px;
   color: var(--muted);
   font-size: 0.9rem;
 }
@@ -118,7 +118,7 @@
   .mobile-buttons {
     display: flex;
     gap: 10px;
-    margin-top: 10px;
+    margin-block-start: 10px;
     justify-content: center;
   }
   
@@ -216,22 +216,22 @@
     .nav-links a { color: var(--blue-400); text-decoration: none; padding: 8px 12px; border-radius: 8px; transition: 0.2s; }
     .nav-links a:hover { background: var(--yellow-500); color: var(--bg); }
     .hamburger { display: none; font-size: 1.8rem; background: none; border: none; color: var(--yellow-500); cursor: pointer; }
-    .mobile-menu { display: none; flex-direction: column; list-style: none; background: var(--bg); position: absolute; inset-inline-start: 0; inset-block-start: 72px; width: 100%; padding: 10px 0; }
+    .mobile-menu { display: none; flex-direction: column; list-style: none; background: var(--bg); position: absolute; inset-inline-start: 0; inset-block-start: 72px; inline-size: 100%; padding: 10px 0; }
     .mobile-menu a { display: block; padding: 12px 20px; color: var(--text); text-decoration: none; }
     .mobile-menu a:hover { background: var(--blue-500); color: #fff; }
-    @media (max-width: 768px) {
+    @media (max-inline-size: 768px) {
       .nav-links { display: none; }
       .hamburger { display: block; }
     }
     .mobile-menu.show { display: flex; }
 
   /* Mobile Menu */
-  .mobile-menu { display:none; flex-direction:column; list-style:none; background: var(--bg); position:absolute; inset-inline-start:0; inset-block-start:72px; width:100%; padding:10px 0; }
+  .mobile-menu { display:none; flex-direction:column; list-style:none; background: var(--bg); position:absolute; inset-inline-start:0; inset-block-start:72px; inline-size:100%; padding:10px 0; }
   .mobile-menu a { display:block; padding:12px 20px; color: var(--text); text-decoration:none; }
   .mobile-menu a:hover { background: var(--blue-500); color:#fff; }
 
   /* Responsive */
-  @media (max-width: 768px) {
+  @media (max-inline-size: 768px) {
     .nav-links { display:none; }
     .hamburger { display:block; }
   }
@@ -243,7 +243,7 @@ h1#hero-title {
     font-size: 1.5rem;
     color: var(--yellow-500);
     display: block;
-    margin-bottom: 10px;
+    margin-block-end: 10px;
   }
     
   /* Active Mobile Menu */
@@ -392,7 +392,7 @@ h1#hero-title {
 }
 
     
- @media (max-width: 480px) {
+ @media (max-inline-size: 480px) {
    .logo {
     font-size: 1rem; /* Kleiner als das Standard 1.1rem */
     font-weight: 800; /* Etwas weniger fett für bessere Lesbarkeit */
@@ -410,13 +410,13 @@ h1#hero-title {
   }
    
 .profile-card {
-    margin-top: 30px;
+    margin-block-start: 30px;
     text-align: center;
   }
 .profile-img {
-    width: 70vw; /* 70% der Bildschirmbreite */
-    height: auto; /* Verhältnis beibehalten */
-    max-width: 250px; /* Begrenzung für sehr schmale Geräte */
+    inline-size: 70vw; /* 70% der Bildschirmbreite */
+    block-size: auto; /* Verhältnis beibehalten */
+    max-inline-size: 250px; /* Begrenzung für sehr schmale Geräte */
   }
 /* Eyebrow und Titel */
   .eyebrow {
@@ -426,22 +426,22 @@ h1#hero-title {
     font-weight: 700;
     font-size: 0.9rem; /* Konsolidiert und kleiner */
     display: inline-block;
-    margin-bottom: 12px;
+    margin-block-end: 12px;
   }
-   .hero-text .eyebrow { font-size: 0.9rem; font-weight: 700; background: var(--yellow-600); color: var(--bg); padding: 5px 12px; border-radius: 12px; display: inline-block; margin-bottom: 12px; }
+   .hero-text .eyebrow { font-size: 0.9rem; font-weight: 700; background: var(--yellow-600); color: var(--bg); padding: 5px 12px; border-radius: 12px; display: inline-block; margin-block-end: 12px; }
 .hero-text h1 {
     color: var(--yellow-500); /* Verwendet CSS-Variable statt hartcodiert */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
     font-weight: 800;
     font-size: 2rem; /* Kleinere H1 für Mobil */
-    margin-bottom: 10px;
+    margin-block-end: 10px;
   }
    /* Buttons */
   .cta-row {
     display: flex;
     flex-direction: column; /* Vertikal stapeln */
     gap: 14px;
-    margin-bottom: 16px;
+    margin-block-end: 16px;
     align-items: center; /* Zentrieren */
   }
   
@@ -469,19 +469,19 @@ h1#hero-title {
       .btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); }
 /* Text und Abstände */
   .hero-text > *:not(:last-child) {
-    margin-bottom: 16px;
+    margin-block-end: 16px;
   }
    
  .hero-text > div {
     font-size: 1rem;
     color: var(--muted);
     line-height: 1.4;
-    margin-top: 10px; /* Weniger Abstand */
+    margin-block-start: 10px; /* Weniger Abstand */
   }
 /* Galerie */
   .image-gallery img {
     inline-size: 85%; /* Kleinere Bilder */
-    margin-bottom: 10px;
+    margin-block-end: 10px;
   }
    /* Allgemeine Sektionen */
   .section {
@@ -490,15 +490,15 @@ h1#hero-title {
   
   .card.unified {
        padding: 10px; /* Weniger Padding */
-       margin-bottom: 15px; /* Abstand zwischen Karten */
+       margin-block-end: 15px; /* Abstand zwischen Karten */
      }
     .card.unified h3 {
        font-size: 1rem; /* Kleinere Überschriften */
-       margin-bottom: 8px;
+       margin-block-end: 8px;
      }
      
      .card.unified ul {
-       padding-left: 15px; /* Weniger Einzug */
+       padding-inline-start: 15px; /* Weniger Einzug */
      }
      
     .card.unified li {
@@ -670,8 +670,8 @@ h1#hero-title {
 
 .hamburger span {
   display: block;
-  width: 25px;
-  height: 3px;
+  inline-size: 25px;
+  block-size: 3px;
   background: var(--yellow-500);
   margin: 5px 0;
   transition: 0.3s;
@@ -702,8 +702,8 @@ h1#hero-title {
 }
 
 .profile-img {
-  width: 100%;
-  max-width: 330px;
+  inline-size: 100%;
+  max-inline-size: 330px;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 16px 40px rgba(0,0,0,0.25);
@@ -719,14 +719,14 @@ h1#hero-title {
 /* MOBILE BUTTONS */
 .mobile-buttons {
   display: none;
-  width: 100%;
-  margin-top: 12px;
+  inline-size: 100%;
+  margin-block-start: 12px;
 }
 
 .mobile-buttons .btn {
   display: block;
   text-align: center;
-  margin-bottom: 10px;
+  margin-block-end: 10px;
 }
 
 /* MOBILE VERSION */
@@ -737,7 +737,7 @@ h1#hero-title {
   }
 
   .profile-img {
-    max-width: 260px;
+    max-inline-size: 260px;
   }
 
   .mobile-buttons {
@@ -764,7 +764,7 @@ h1#hero-title {
 /* Profile Buttons nur auf Handy */
 .mobile-buttons {
   display: none;
-  margin-top: 14px;
+  margin-block-start: 14px;
   flex-direction: column;
   gap: 10px;
 }
@@ -787,10 +787,10 @@ h1#hero-title {
 }
 .profile-bg {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 320px;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  inline-size: 300px;
+  block-size: 320px;
   border-radius: 50%;
   transform: translate(-50%,-50%);
   background: radial-gradient(circle, rgba(255,209,102,0.18), rgba(0,114,255,0.06));
@@ -798,8 +798,8 @@ h1#hero-title {
   z-index: 0;
 }
 .profile-img {
-  width: 240px;
-  height: 300px;
+  inline-size: 240px;
+  block-size: 300px;
   border-radius: 12px;
   object-fit: cover;
   border: 4px solid var(--blue-500);
@@ -812,61 +812,111 @@ h1#hero-title {
   transform: scale(1.04) rotate(-1deg);
 }
 
-/* HERO */
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
-  position: relative;
+  justify-content: center;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #fff;
-  overflow: hidden;
-}
-.overlay {
-  position: absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.4);
-  z-index:0;
+  padding: 0 50px;
 }
 
-/* Hero Grid Desktop */
 .hero-grid {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-  gap: 40px;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
 }
+
 .hero-text {
   max-width: 600px;
-  z-index:2;
 }
 .eyebrow {
   font-size: 1.2rem;
-  color: #ffc107;
   letter-spacing: 1px;
+  color: #ffc107;
   text-transform: uppercase;
 }
-h1#hero-title {
-  font-size: 3rem;
-  margin: 0.3em 0;
+#hero-title {
+  font-size: 4rem;
+  margin: 10px 0;
   font-weight: 700;
 }
-.profile-skills {
-  margin-top: 20px;
-  font-size: 1.05rem;
-  line-height: 1.6;
+.lead {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
   color: #e0e0e0;
 }
+.slogan {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 25px;
+  color: #ccc;
+}
 
-/* Buttons */
 .cta-row {
-  margin-top: 30px;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn.yellow {
+  background: #ffc107;
+  color: #000;
+}
+.btn.yellow:hover {
+  background: #e6b800;
+  transform: translateY(-2px);
+}
+
+.profile-card {
+  flex-shrink: 0;
+  position: relative;
+}
+.profile-img {
+  width: 350px;
+  height: 450px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 5px solid #ffc107;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.profile-img:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 35px 60px rgba(0,0,0,0.7);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-grid {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+  .profile-img {
+    width: 280px;
+    height: 360px;
+  }
+  #hero-title {
+    font-size: 2.8rem;
+  }
+  .lead, .slogan {
+    font-size: 1rem;
+  }
+  .cta-row {
+    justify-content: center;
+  }
 }
 .btn {
   padding: 12px 24px;
@@ -891,10 +941,10 @@ h1#hero-title {
 }
 .profile-bg {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 320px;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  inline-size: 300px;
+  block-size: 320px;
   border-radius: 50%;
   transform: translate(-50%,-50%);
   background: radial-gradient(circle, rgba(255,193,7,0.3), rgba(0,0,0,0.1));
@@ -902,8 +952,8 @@ h1#hero-title {
   z-index:0;
 }
 .profile-img {
-  width: 280px;
-  height: 320px;
+  inline-size: 280px;
+  block-size: 320px;
   border-radius: 16px;
   object-fit: cover;
   border: 4px solid #ffc107;
@@ -922,8 +972,8 @@ h1#hero-title {
     text-align: center;
   }
   .profile-img {
-    width: 220px;
-    height: 260px;
+    inline-size: 220px;
+    block-size: 260px;
   }
   h1#hero-title {
     font-size: 2.5rem;
@@ -936,7 +986,7 @@ h1#hero-title {
     gap: 15px;
     justify-content: center;
   }
-}
+
 
 
 
@@ -949,6 +999,7 @@ h1#hero-title {
  <body>
 
   <!-- Loader mit Fortschrittsbalken -->
+
   <div id="loader">
     <div class="loader-content">
       <div class="spinner"></div>
@@ -996,35 +1047,37 @@ h1#hero-title {
     <li><a href="#projects">Projekte</a></li>
     <li><a href="#contact">Kontakt</a></li>
   </ul>
+  
 </header>
 
 <!-- HERO -->
 <!-- HERO -->
-<section class="hero" id="about" aria-labelledby="hero-title">
+<section class="hero parallax" id="about" aria-labelledby="hero-title">
   <div class="overlay"></div>
-
   <div class="container hero-grid">
+    
+    <!-- TEXT -->
+    <div class="hero-text">
+      <span class="eyebrow">Kfz-Mechaniker • Nador</span>
+      <h1 id="hero-title">Soufiane Mamoun</h1>
+      <div class="lead">Kfz-Mechaniker | Wartung, Diagnose & Reparatur</div>
+      <p class="slogan">Präzision und Teamarbeit für jedes Fahrzeug</p>
+
+      <div class="cta-row" role="group" aria-label="Aktionen">
+        <button class="btn yellow" id="openVideoBtn">▶ Bewerbungsvideo</button>
+        <a class="btn yellow btn-cv" href="zertifikate/zertifikate.pdf" download>Lebenslauf herunterladen</a>
+        <a class="btn yellow btn-contact" href="#contact">✉ Kontakt</a>
+      </div>
+
+      <div class="skills" style="margin-top:14px;color:var(--muted)">
+        Diagnosegeräte: Bosch · Launch · VAG · Delphi — Reifenmontage · Bremsen · Ölwechsel
+      </div>
+    </div>
 
     <!-- PROFILBILD -->
     <aside class="profile-card" aria-label="Profilbild von Soufiane">
-      <div class="profile-bg"></div>
-      <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun" class="profile-img">
+      <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun bei der Arbeit" class="profile-img">
     </aside>
-
-    <!-- TEXT -->
-    <div class="hero-text">
-      <span class="eyebrow">Kfz-Mechaniker</span>
-      <h1 id="hero-title">Soufiane Mamoun</h1>
-
-      <div class="profile-skills">
-        Diagnosegeräte: Bosch · Launch · VAG · Delphi — Reifenmontage · Bremsen · Ölwechsel
-      </div>
-
-      <div class="cta-row">
-        <a class="btn yellow" href="zertifikate/zertifikate.pdf" download>Unterlagen</a>
-        <a href="#contact" class="btn yellow">✉ Kontakt</a>
-      </div>
-    </div>
 
   </div>
 </section>
@@ -1286,6 +1339,8 @@ topBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+
+
 <!-- Hamburger Script -->
 
   // Hamburger
@@ -1383,12 +1438,6 @@ topBtn.addEventListener('click', () => {
       setTimeout(() => loader.style.display = 'none', 500);
     }, 1000); // 1 Sekunde zusätzlich für Animation
   });
-
-
-
-
-
-
   
   </script>
 </body>
