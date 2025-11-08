@@ -685,57 +685,70 @@ h1#hero-title {
 .hamburger.active span:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -5px);
 }
-/* Grid-Aufteilung für Hero */
+/* HERO GRID */
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 350px;
+  grid-template-columns: 350px 1fr;
   align-items: center;
   gap: 40px;
+  padding: 40px 0;
 }
 
-/* Profilbild-Frame */
-.profile-frame {
-  width: 100%;
-  background: linear-gradient(135deg, #ffc400, #ffab00, #ff9100);
-  padding: 6px;
-  border-radius: 16px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+/* PROFILBILD */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-img {
   width: 100%;
-  height: 100%;
-  border-radius: 12px;
+  max-width: 330px;
+  border-radius: 20px;
   object-fit: cover;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
 }
 
-/* Buttons nur Handy */
+/* TEXT */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* MOBILE BUTTONS */
 .mobile-buttons {
   display: none;
-  margin-top: 14px;
+  width: 100%;
+  margin-top: 12px;
 }
 
 .mobile-buttons .btn {
   display: block;
+  text-align: center;
   margin-bottom: 10px;
 }
 
-/* Mobile Version */
+/* MOBILE VERSION */
 @media (max-width: 768px) {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .profile-card {
-    order: -1;
-    margin-bottom: 16px;
+  .profile-img {
+    max-width: 260px;
   }
 
   .mobile-buttons {
     display: block;
   }
+
+  .hero-text {
+    align-items: center;
+  }
 }
+
 
     
   </style>
@@ -802,31 +815,30 @@ h1#hero-title {
 
   <div class="container hero-grid">
 
-    <!-- TEXT -->
-    <div class="hero-text">
-      <span class="eyebrow">Kfz-Mechaniker</span>
-      <h1 id="hero-title">Soufiane Mamoun</h1>
-
-      <!-- Buttons nur für Handy -->
+    <!-- PROFILBILD MOBIL + DESKTOP -->
+    <aside class="profile-card" aria-label="Profilbild von Soufiane">
+      <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun" class="profile-img">
+      
+      <!-- Buttons nur Handy -->
       <div class="mobile-buttons">
         <a class="btn yellow" href="zertifikate/zertifikate.pdf" download>Unterlagen</a>
         <a href="#contact" class="btn yellow">✉ Kontakt</a>
       </div>
+    </aside>
+
+    <!-- TEXT -->
+    <div class="hero-text">
+      <span class="eyebrow">Kfz-Mechaniker</span>
+      <h1 id="hero-title">Soufiane Mamoun</h1>
 
       <div class="profile-skills">
         Diagnosegeräte: Bosch · Launch · VAG · Delphi — Reifenmontage · Bremsen · Ölwechsel
       </div>
     </div>
 
-    <!-- PROFILBILD -->
-    <aside class="profile-card" aria-label="Profilbild von Soufiane">
-      <div class="profile-frame">
-        <img src="images/IMG_6471.JPG" alt="Soufiane Mamoun" class="profile-img">
-      </div>
-    </aside>
-
   </div>
 </section>
+
 
 
 
